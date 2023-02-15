@@ -1,0 +1,14 @@
+#Technical
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.gitignore
+.git
+
+#App
+.env
+
+#Garbage
+.idea
+.DS_Store
