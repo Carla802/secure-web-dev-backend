@@ -23,6 +23,7 @@ router.post(
   "/login",
   passport.authenticate("local", {
     session: false,
+    failureRedirect: "/login"
   }),
   generateJwt
 );
