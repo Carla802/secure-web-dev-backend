@@ -1,6 +1,7 @@
 const LocalStrategy = require("passport-local");
 const usersService = require("../users/users.service");
 const passport = require("passport");
+const httpErrorHelper = require("../custom-errors/http-error.helper");
 
 passport.use(
   "local",
@@ -10,6 +11,7 @@ passport.use(
       const passwordValid = await user.isValidPassword(password);
       if (!passwordValid) {
         return cb(null, false, { message: "Incorrect username or password." });
+
       }
       return cb(null, user);
     } catch (e) {
